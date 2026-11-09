@@ -1,7 +1,7 @@
 /**
  * DeepSeek-Ducktor: Ducktor as a native DeepSeek Harness (dsh) plugin.
  *
- * Two pieces, both reading the Ducktor copy in duck/ (or Config.duckRoot):
+ * Three pieces, all reading the Ducktor copy in duck/ (or Config.duckRoot):
  *   commands  the /duck-* skills through a skill provider. The base directory dsh shows
  *             the model is the Ducktor root, so the instruction dsh adds ("resolve
  *             relative paths against the base directory") agrees with the commands' own
@@ -11,6 +11,8 @@
  *             same duck/bin/duck.js. It enters the first model request of a session, and
  *             again when it changes or compaction drops it, the way dsh's own AGENTS.md
  *             loader does. Subagents do not get it: they cannot ask the student.
+ *   checkpoint the edit checkpoint of duck/bin/duck.js on dsh's tools/pre-execute
+ *             (lib/checkpoint.js): the first edit of a text draft in a turn is refused once.
  *
  * duck/ is a verbatim copy of Ducktor (scripts/sync-duck.mjs); host differences live in
  * this file and lib/duck.js.
@@ -22,6 +24,7 @@ import { createRequire } from 'node:module'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { readCards } from './lib/cards.js'
+import { registerCheckpoint } from './lib/checkpoint.js'
 import { duckSkills, MENTOR_CARDS, parseSkill, projectOf, PROVIDER, resolveDuckRoot, stepWantsContext, withContext } from './lib/duck.js'
 
 /**
@@ -111,6 +114,8 @@ export async function apply(ctx, config) {
   })
   ctx.logger.info('Ducktor at %s: %d commands, %d cards, session context %s', root, candidates.length,
     cards.length, config.sessionContext === false ? 'off' : 'on')
+  // The edit checkpoint holds with or without the session context (design 0.2.4).
+  registerCheckpoint(ctx, root)
   if (config.sessionContext === false) return
 
   ctx.on('agent/pre-step', async ({ agent, messages, step, signal }, next) => {

@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "yinwu01/Ducktor",
-    "ref": "duck--v0.2.3",
-    "commit": "e71081534dfd5d5efe16a45be44ace6402b31ac7",
-    "committedAt": "2026-11-05T23:32:12-08:00",
-    "subject": "Merge release-0.2.3: Ducktor 0.2.3"
+    "ref": "584ab73",
+    "commit": "584ab73792b690b0c1e50e8d02ceb3b285a9143f",
+    "committedAt": "2026-11-09T00:09:51-08:00",
+    "subject": "Checkpoint: owner and mode check on the folder, no -- in ids, prune per file, allowRecord still runs if the checkpoint throws; INSTALL says what the second hook does now (code review 1)"
   },
   "paths": [
     "bin",
@@ -19,7 +19,7 @@
     "package.json"
   ],
   "files": {
-    "bin/duck.js": "2f118c11bb0e748e801ab0f1f566e02b0fe0116f5447a6d5400ee93270b7a4af",
+    "bin/duck.js": "becec6d23d1120968662d182c067b15ff4fe39cde056f13aafa419e7b9c1bbda",
     "cards/E01.md": "4d74bb05f5daa5411d7afa788a153cb013948a09791f46840eb46e8c9db66991",
     "cards/E02.md": "c1245a3378bb5aa49ba6f5b0ea91a4cea952ae9d248e572bbc4da508ac6c9b3a",
     "cards/E05.md": "7d63cf312b5a9aeeb7b4df96f970c2182dc376b24db64cbb5713fb76b6cd5f34",
@@ -165,6 +165,7 @@
     "LICENSES/README.md": "4835c5e54a8fe342c7f7bc713c1d6727286aa58f4efaf4639ae122500341a15f",
     "package.json": "20453b7c07d4e8da49225774fa65f885834b99c3dc41b8ab531da4fe21c7772e",
     "rules/agents-header.md": "0919abb3ae5c51e9e149613447ae8dc44560bb7c1e2d7ff08eedda4f2ea80c00",
+    "rules/checkpoint.md": "531d7a7114ca6842267d8feeea91ec145069fbc722982a8c6b69e80e3def7cf3",
     "rules/command-basics.md": "bfad2f63e506e22c89b6e4dac2a2fcf0858f4a66b7fde928cee6c180e575cbb6",
     "rules/commands.json": "bd9e692d076dc81fd972a2bf63cdf65511ece3e7bc38970af10027b8a7133f78",
     "rules/core.md": "62bbe317f66913cf9dfb70ea0456ee28589d5281bdcb100a74980cbc698f53f6",
