@@ -252,6 +252,7 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 | 读插件里的文件 | Claude Code 里插件给 Read、Glob、Grep 开了绿灯 | dsh 的每种沙箱模式都不拦读文件，不用学生批准；插件目录只读 |
 | 学生自己加的命令 | 放项目的 `.claude/skills/duck-xxx/` 或 `.agents/skills/duck-xxx/` | dsh 只读 `.agents/skills/`（和 `.dsh/skills/`），不读 `.claude/skills/`。名字别和插件的 14 条重复：dsh 里插件自带的技能优先级最低，同名的会盖过插件的命令 |
 | 项目目录 | 开场 hook 收到的目录 | 会话创建时的目录。开场说明里写明它和 `.duck/` 的绝对路径，让模型在会话里换了工作目录也读写原来的 `.duck/`（模型照不照做，没用真模型验证） |
+| 改稿前的检查（0.2.4 起） | 开启后，每一轮第一次改文本稿时，`bin/duck.js` 的 hook 拒绝一次，交给 AI 一段提醒；Claude Code 一条消息里一起发出的几处一起拒绝；Codex 里还没开 | 同一条规则、同一段提醒（`duck/rules/checkpoint.md`），由插件在 dsh 执行改稿工具前拒绝；同一步里一起发出的几处一起拒绝 |
 
 ---
 
@@ -285,6 +286,12 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 <summary><b>5. 以前叫什么？</b></summary>
 <br>
 2026-10-25 的第一版叫 deepseek-ducktor。10-26 改名 deepseek-supervisor，10-27 改名 deepseek-doctor（显示名 DeepSeek-Doctor），10-29 改回 deepseek-ducktor。里面的 Ducktor 在 10-27 以前叫 Doctor Duck。<code>evals/runs/</code> 和 <code>docs/验证记录.md</code> 里的旧记录保留了当时的名字。装过旧版本的，见「安装与快速开始」里的旧版本说明。
+</details>
+
+<details>
+<summary><b>6. 为什么每一轮第一次改稿会被拦一次？</b></summary>
+<br>
+开启 Ducktor 后（on 或 quiet），每一轮 AI 第一次改文本稿（.md、.tex、.txt 这类）时，插件先拒绝这次修改，交给 AI 一段固定提醒：查一查这次修改有没有替你定下还没定的研究决定，稿子里互相矛盾的地方有没有替你选边。AI 读完提醒再重新改。同一步里一起发出的几处修改一起拒绝一次。改代码、改 <code>.duck/</code> 里的记录、子代理的修改不拦；关着（off）时不拦。被拦下的是整份重写时，要多花差不多重写一遍的时间。命令行的 <code>--json</code> 输出里，这次拒绝是一个状态为 error 的工具结果，内容就是这段提醒；网页界面里怎么显示，没有截图核对过。AI 改用 shell 命令写稿子时，这道检查拦不住。
 </details>
 
 ---

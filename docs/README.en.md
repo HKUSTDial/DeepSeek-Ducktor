@@ -253,6 +253,7 @@ All three are optional. If you installed with way 1 or 2, change them in "配置
 | Reading files in the plugin | in Claude Code, the plugin lets Read, Glob and Grep through | no dsh sandbox mode blocks reading files, so the student does not have to approve; the plugin folder is read-only |
 | Commands the student adds | in the project's `.claude/skills/duck-xxx/` or `.agents/skills/duck-xxx/` | dsh reads only `.agents/skills/` (and `.dsh/skills/`), not `.claude/skills/`. Do not reuse the names of the plugin's 14 commands: in dsh, skills that come with a plugin have the lowest priority, so a skill with the same name overrides the plugin's command |
 | Project folder | the folder that the session hook gets | the folder where the session was created. The session note gives the absolute paths of it and of `.duck/`, so that the model keeps reading and writing the original `.duck/` even if it changes the working folder in the session (whether the model does so was not tested with a real model) |
+| Check before a draft edit (from 0.2.4) | with Ducktor on, the hook in `bin/duck.js` refuses the first text-draft edit of each turn once and gives the AI a reminder; in Claude Code, the edits sent together in one message are refused together; not on in Codex yet | the same rule and the same reminder (`duck/rules/checkpoint.md`); the plugin refuses the edit before dsh runs the edit tool; the edits sent together in one step are refused together |
 
 ---
 
@@ -286,6 +287,12 @@ No. Ducktor gives no tests and does not grade the user. <code>/duck-idea</code> 
 <summary><b>5. What was it called before?</b></summary>
 <br>
 The first version on 2026-10-25 was called deepseek-ducktor. On 10-26 it was renamed deepseek-supervisor, on 10-27 deepseek-doctor (display name DeepSeek-Doctor), and on 10-29 back to deepseek-ducktor. The Ducktor inside was called Doctor Duck before 10-27. The old records in <code>evals/runs/</code> and <code>docs/验证记录.md</code> keep the names of their time. If you installed an older version, see the note on older versions in "Install and quick start".
+</details>
+
+<details>
+<summary><b>6. Why is the first draft edit of each turn stopped once?</b></summary>
+<br>
+With Ducktor on (on or quiet), the first time in each turn that the AI edits a text draft (.md, .tex, .txt and the like), the plugin refuses that edit and gives the AI a fixed reminder: check whether the edit makes a research decision you have not made yet, or takes a side where your draft contradicts itself. After reading it, the AI edits again. Edits sent together in one step are refused together, once. Code, the records in <code>.duck/</code> and the edits of sub-agents are not stopped, and nothing is stopped when Ducktor is off. If the refused edit rewrote a whole file, the AI writes it again, which takes about as long as the first time. In the <code>--json</code> output of the command line, the refusal is a tool result with the status error, and its content is the reminder; how the web UI shows it was not checked with a screenshot. When the AI writes a draft with a shell command, this check does not stop it.
 </details>
 
 ---
