@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "yinwu01/Ducktor",
-    "ref": "9b632d7af3a955a471d7c3b131587ad366a5f2e3",
-    "commit": "9b632d7af3a955a471d7c3b131587ad366a5f2e3",
-    "committedAt": "2026-11-09T01:52:13-08:00",
-    "subject": "testing.md: write the two judging rules of the 5ce238c run into the round-2 criteria before the run"
+    "ref": "0522266329e355d1c1a422fc212eb0285dea4644",
+    "commit": "0522266329e355d1c1a422fc212eb0285dea4644",
+    "committedAt": "2026-11-09T02:11:44-08:00",
+    "subject": "Checkpoint reminder: reread the edits once per choice and fix sentences that hold under only one; unchanged places go before the quote block (round-2 e2e: 2/6 all four on Claude Code)"
   },
   "paths": [
     "bin",
@@ -165,7 +165,7 @@
     "LICENSES/README.md": "4835c5e54a8fe342c7f7bc713c1d6727286aa58f4efaf4639ae122500341a15f",
     "package.json": "20453b7c07d4e8da49225774fa65f885834b99c3dc41b8ab531da4fe21c7772e",
     "rules/agents-header.md": "0919abb3ae5c51e9e149613447ae8dc44560bb7c1e2d7ff08eedda4f2ea80c00",
-    "rules/checkpoint.md": "0cf46d0979ec7666d97bff44c5ff632325860b994ef8854b3b3ee9bf2de5d652",
+    "rules/checkpoint.md": "159b9d8812de0f5ac04e0666f46badf193a19db9ecdab1511a0e73e49e25ee45",
     "rules/command-basics.md": "bfad2f63e506e22c89b6e4dac2a2fcf0858f4a66b7fde928cee6c180e575cbb6",
     "rules/commands.json": "bd9e692d076dc81fd972a2bf63cdf65511ece3e7bc38970af10027b8a7133f78",
     "rules/core.md": "62bbe317f66913cf9dfb70ea0456ee28589d5281bdcb100a74980cbc698f53f6",
