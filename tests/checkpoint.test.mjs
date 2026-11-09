@@ -46,7 +46,7 @@ test('editedFiles names the files of write, edit and the changing str_replace_ed
   assert.deepEqual(editedFiles('write', null), [])
 })
 
-test('dsh checkpoint refuses the first text-draft edit of a turn once, before next()', async () => {
+test('dsh checkpoint refuses the first text-draft edit of a turn and the rest of its step, before next()', async () => {
   const project = temp({ '.duck/config.md': '开关：on\n', 'plan.md': 'a' })
   const state = temp()
   process.env.XDG_STATE_HOME = state
@@ -59,7 +59,14 @@ test('dsh checkpoint refuses the first text-draft edit of a turn once, before ne
   assert.equal(first.kind, 'deny')
   assert.match(first.reason, /这不是学生的拒绝/)
   assert.equal(called, 0)
+  // Another edit sent in the same step: the model has not read the reminder yet, so it is refused too.
+  const batch = await h['tools/pre-execute']({ name: 'write', arguments: { file_path: join(project, 'notes.md') }, agent: a }, next)
+  assert.equal(batch.kind, 'deny')
+  assert.match(batch.reason, /这不是学生的拒绝/)
+  // The next step comes after the model read the refusals: its edits go through.
+  await h['agent/pre-step']({ agent: a, turn: 1, step: 2 }, next)
   assert.equal(await h['tools/pre-execute']({ name: 'write', arguments: { file_path: join(project, 'plan.md') }, agent: a }, next), ALLOW)
+  assert.equal(await h['tools/pre-execute']({ name: 'edit', arguments: { file_path: 'notes.md' }, agent: a }, next), ALLOW)
   await h['agent/pre-step']({ agent: a, turn: 2, step: 1 }, next)
   assert.equal((await h['tools/pre-execute']({ name: 'edit', arguments: { file_path: 'plan.md' }, agent: a }, next)).kind, 'deny')
   // A second session with the same turn number has its own record.
@@ -69,7 +76,7 @@ test('dsh checkpoint refuses the first text-draft edit of a turn once, before ne
   delete process.env.XDG_STATE_HOME
 })
 
-test('dsh checkpoint lets through: off, subagents, code files, .duck/, no turn yet', async () => {
+test('dsh checkpoint lets through: off, subagents, code files, .duck/, no turn yet; a step without a number refuses only once', async () => {
   const on = temp({ '.duck/config.md': '开关：on\n', 'run.py': 'a', '.duck/notebook.md': '- x\n' })
   const off = temp({ '.duck/config.md': '开关：off\n', 'plan.md': 'a' })
   process.env.XDG_STATE_HOME = temp()
@@ -88,6 +95,11 @@ test('dsh checkpoint lets through: off, subagents, code files, .duck/, no turn y
   assert.equal(await call(h, a, 'run.py'), ALLOW)
   assert.equal(await call(h, a, '.duck/notebook.md'), ALLOW)
   assert.equal((await call(h, a, 'notes.md')).kind, 'deny')
+  // A host that sends no step number: only the first edit of the turn is refused.
+  const b = agent('n', on)
+  await h['agent/pre-step']({ agent: b, turn: 1 }, next)
+  assert.equal((await call(h, b, 'notes.md')).kind, 'deny')
+  assert.equal(await call(h, b, 'notes.md'), ALLOW)
   delete process.env.XDG_STATE_HOME
 })
 
@@ -104,6 +116,7 @@ test('dsh checkpoint writes the test log with the Ducktor commit when LOG exists
   const out = await h['tools/pre-execute']({ name: 'edit', arguments: { file_path: 'plan.md' }, agent: a }, next)
   assert.match(out.reason, /This is not the student refusing/)
   const line = JSON.parse(readFileSync(join(cp, 'log.txt'), 'utf8').trim())
+  assert.equal(line.batch, false)
   assert.equal(line.host, 'dsh')
   assert.equal(line.session, 'agent-9')
   assert.equal(line.turn, '3')

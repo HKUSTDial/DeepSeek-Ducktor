@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "yinwu01/Ducktor",
-    "ref": "5ce238c60f57df3dd14b67d46465848a526efa2d",
-    "commit": "5ce238c60f57df3dd14b67d46465848a526efa2d",
-    "committedAt": "2026-11-09T00:53:03-08:00",
-    "subject": "testing.md: 0.2.4 e2e criteria, written before the run (p5 draft, 0.2.3 vs 0.2.4, 6 runs per host)"
+    "ref": "9b632d7af3a955a471d7c3b131587ad366a5f2e3",
+    "commit": "9b632d7af3a955a471d7c3b131587ad366a5f2e3",
+    "committedAt": "2026-11-09T01:52:13-08:00",
+    "subject": "testing.md: write the two judging rules of the 5ce238c run into the round-2 criteria before the run"
   },
   "paths": [
     "bin",
@@ -19,7 +19,7 @@
     "package.json"
   ],
   "files": {
-    "bin/duck.js": "becec6d23d1120968662d182c067b15ff4fe39cde056f13aafa419e7b9c1bbda",
+    "bin/duck.js": "af58b1f78b638c9c1ed32736aafe6d0340c380029e6004f9367b0daba0713d77",
     "cards/E01.md": "4d74bb05f5daa5411d7afa788a153cb013948a09791f46840eb46e8c9db66991",
     "cards/E02.md": "c1245a3378bb5aa49ba6f5b0ea91a4cea952ae9d248e572bbc4da508ac6c9b3a",
     "cards/E05.md": "7d63cf312b5a9aeeb7b4df96f970c2182dc376b24db64cbb5713fb76b6cd5f34",
@@ -165,7 +165,7 @@
     "LICENSES/README.md": "4835c5e54a8fe342c7f7bc713c1d6727286aa58f4efaf4639ae122500341a15f",
     "package.json": "20453b7c07d4e8da49225774fa65f885834b99c3dc41b8ab531da4fe21c7772e",
     "rules/agents-header.md": "0919abb3ae5c51e9e149613447ae8dc44560bb7c1e2d7ff08eedda4f2ea80c00",
-    "rules/checkpoint.md": "78873a3e93fd28ea0aa3b2d14f7d8432fab645c28ff23cd7c58eff033ca849bc",
+    "rules/checkpoint.md": "0cf46d0979ec7666d97bff44c5ff632325860b994ef8854b3b3ee9bf2de5d652",
     "rules/command-basics.md": "bfad2f63e506e22c89b6e4dac2a2fcf0858f4a66b7fde928cee6c180e575cbb6",
     "rules/commands.json": "bd9e692d076dc81fd972a2bf63cdf65511ece3e7bc38970af10027b8a7133f78",
     "rules/core.md": "62bbe317f66913cf9dfb70ea0456ee28589d5281bdcb100a74980cbc698f53f6",
