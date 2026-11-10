@@ -114,8 +114,13 @@ export async function apply(ctx, config) {
   })
   ctx.logger.info('Ducktor at %s: %d commands, %d cards, session context %s', root, candidates.length,
     cards.length, config.sessionContext === false ? 'off' : 'on')
-  // The edit checkpoint holds with or without the session context (design 0.2.4).
-  registerCheckpoint(ctx, root)
+  // The edit checkpoint holds with or without the session context (design 0.2.4). A failure here
+  // must not cost the student the commands or the session context: edits then go unchecked.
+  try {
+    registerCheckpoint(ctx, root)
+  } catch (err) {
+    ctx.logger.warn('Ducktor edit checkpoint not registered, edits are not checked: %s', err?.message ?? err)
+  }
   if (config.sessionContext === false) return
 
   ctx.on('agent/pre-step', async ({ agent, messages, step, signal }, next) => {

@@ -124,3 +124,31 @@ test('dsh checkpoint writes the test log with the Ducktor commit when LOG exists
   assert.equal(line.duck, JSON.parse(readFileSync(new URL('../duck.lock.json', import.meta.url), 'utf8')).source.commit)
   delete process.env.XDG_STATE_HOME
 })
+
+test('a duckRoot older than 0.2.4 (no checkpoint functions) or a broken bin/duck.js: no handlers, a warning, no throw', () => {
+  const old = temp({
+    'bin/duck.js': "'use strict';\nmodule.exports = { main() {}, modeOf() { return { mode: 'on' } }, buildContext() { return '' }, insideRoot() { return false }, ROOT: __dirname };\n",
+  })
+  const broken = temp({ 'bin/duck.js': 'this is not javascript (\n' })
+  for (const root of [old, broken]) {
+    const handlers = {}
+    const warnings = []
+    const ctx = { on: (event, fn) => { handlers[event] = fn }, get: () => undefined, logger: { warn: (...args) => warnings.push(args) } }
+    assert.equal(registerCheckpoint(ctx, root), false)
+    assert.deepEqual(Object.keys(handlers), [])
+    assert.equal(warnings.length, 1)
+    assert.match(String(warnings[0][0]), /no edit checkpoint/)
+  }
+})
+
+test('dsh checkpoint lets a relative path through when the working directory is unknown (design 0.2.4, step 16)', async () => {
+  const project = temp({ '.duck/config.md': '开关：on\n', 'plan.md': 'a' })
+  process.env.XDG_STATE_HOME = temp()
+  const h = setup('')
+  const a = agent('agent-cwd', project)
+  await h['agent/pre-step']({ agent: a, turn: 1, step: 1 }, next)
+  assert.equal(await h['tools/pre-execute']({ name: 'edit', arguments: { file_path: 'plan.md' }, agent: a }, next), ALLOW)
+  // An absolute path is still checked.
+  assert.equal((await h['tools/pre-execute']({ name: 'edit', arguments: { file_path: join(project, 'plan.md') }, agent: a }, next)).kind, 'deny')
+  delete process.env.XDG_STATE_HOME
+})
