@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "yinwu01/Ducktor",
-    "ref": "0522266329e355d1c1a422fc212eb0285dea4644",
-    "commit": "0522266329e355d1c1a422fc212eb0285dea4644",
-    "committedAt": "2026-11-09T02:11:44-08:00",
-    "subject": "Checkpoint reminder: reread the edits once per choice and fix sentences that hold under only one; unchanged places go before the quote block (round-2 e2e: 2/6 all four on Claude Code)"
+    "ref": "c05257926152c2c9df5d23b92d7259cb3a57a34e",
+    "commit": "c05257926152c2c9df5d23b92d7259cb3a57a34e",
+    "committedAt": "2026-11-09T18:58:55-08:00",
+    "subject": "Hub: pick the language from the listed project when the student has only typed a command"
   },
   "paths": [
     "bin",
@@ -19,7 +19,7 @@
     "package.json"
   ],
   "files": {
-    "bin/duck.js": "af58b1f78b638c9c1ed32736aafe6d0340c380029e6004f9367b0daba0713d77",
+    "bin/duck.js": "bdc12ca014336d640f993f0afc9bb3e33887d4e2e9647559133c2aea1bcfc033",
     "cards/E01.md": "4d74bb05f5daa5411d7afa788a153cb013948a09791f46840eb46e8c9db66991",
     "cards/E02.md": "c1245a3378bb5aa49ba6f5b0ea91a4cea952ae9d248e572bbc4da508ac6c9b3a",
     "cards/E05.md": "7d63cf312b5a9aeeb7b4df96f970c2182dc376b24db64cbb5713fb76b6cd5f34",
@@ -172,7 +172,7 @@
     "rules/idle.md": "4cc8edb32b007d9e46e88a0d4f0590d9d2391ff64e986ee24f8fc507aea8d3f3",
     "rules/wrapper-template.md": "ccb6629af40b92ee949a5e20bdf35318d7bdcc1f5a4b15184cb792466c383ce2",
     "skills/duck/agents/openai.yaml": "ccf50e7c85317179009e728771457fb1e88ae257be42b3175df837feefa80b7c",
-    "skills/duck/SKILL.md": "702ee0a4c42944f67ee24e5bdefdafd67030a863cfa7f8f1ee109b2ff9d66cc5",
+    "skills/duck/SKILL.md": "0b05dc4185ed178118bba36820d066dd9437b336487e6b0c24c3fe431fe7a0df",
     "skills/duck-figure/agents/openai.yaml": "d5825d32e7252e5939926aa9ea9a6fbadb3689a20491251223dafbf1ca9a683c",
     "skills/duck-figure/SKILL.md": "d91ed408d5e70480bfe08a606161b2435fa7787e0a7f5fca724dc1fa0a65f421",
     "skills/duck-idea/agents/openai.yaml": "8410d0ecad9d861338395d585173b7527e9189c6582909c83fe6b937d003671c",
