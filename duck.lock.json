@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "yinwu01/Ducktor",
-    "ref": "c05257926152c2c9df5d23b92d7259cb3a57a34e",
-    "commit": "c05257926152c2c9df5d23b92d7259cb3a57a34e",
-    "committedAt": "2026-11-09T18:58:55-08:00",
-    "subject": "Hub: pick the language from the listed project when the student has only typed a command"
+    "ref": "dc049280a76c8127427dc27e4dfd007e38323d26",
+    "commit": "dc049280a76c8127427dc27e4dfd007e38323d26",
+    "committedAt": "2026-11-09T19:29:37-08:00",
+    "subject": "0.2.4: version in the five manifests, CHANGELOG section, INSTALL says which language /duck on writes config.md in"
   },
   "paths": [
     "bin",
@@ -19,7 +19,7 @@
     "package.json"
   ],
   "files": {
-    "bin/duck.js": "bdc12ca014336d640f993f0afc9bb3e33887d4e2e9647559133c2aea1bcfc033",
+    "bin/duck.js": "a07faa300dce14ad3f12207e538a43729292f49f14ad86660fe2e956929d7045",
     "cards/E01.md": "4d74bb05f5daa5411d7afa788a153cb013948a09791f46840eb46e8c9db66991",
     "cards/E02.md": "c1245a3378bb5aa49ba6f5b0ea91a4cea952ae9d248e572bbc4da508ac6c9b3a",
     "cards/E05.md": "7d63cf312b5a9aeeb7b4df96f970c2182dc376b24db64cbb5713fb76b6cd5f34",
@@ -163,7 +163,7 @@
     "LICENSES/CC-BY-NC-SA-4.0.txt": "b35c958b79726c115cf817635abcbc2aa1121cae5e9a1c22819f7c44f58fcaf0",
     "LICENSES/MIT.txt": "d87b3ae1907d415c0e8e75e869b4ec3cc94cb06fcd0d223fe388c4316b5f8dd6",
     "LICENSES/README.md": "4835c5e54a8fe342c7f7bc713c1d6727286aa58f4efaf4639ae122500341a15f",
-    "package.json": "20453b7c07d4e8da49225774fa65f885834b99c3dc41b8ab531da4fe21c7772e",
+    "package.json": "9cec17b821913be9ad6adc0addf648ea3260f3eeefe61b884552bd688a0bfae2",
     "rules/agents-header.md": "0919abb3ae5c51e9e149613447ae8dc44560bb7c1e2d7ff08eedda4f2ea80c00",
     "rules/checkpoint.md": "159b9d8812de0f5ac04e0666f46badf193a19db9ecdab1511a0e73e49e25ee45",
     "rules/command-basics.md": "bfad2f63e506e22c89b6e4dac2a2fcf0858f4a66b7fde928cee6c180e575cbb6",
@@ -172,7 +172,7 @@
     "rules/idle.md": "4cc8edb32b007d9e46e88a0d4f0590d9d2391ff64e986ee24f8fc507aea8d3f3",
     "rules/wrapper-template.md": "ccb6629af40b92ee949a5e20bdf35318d7bdcc1f5a4b15184cb792466c383ce2",
     "skills/duck/agents/openai.yaml": "ccf50e7c85317179009e728771457fb1e88ae257be42b3175df837feefa80b7c",
-    "skills/duck/SKILL.md": "0b05dc4185ed178118bba36820d066dd9437b336487e6b0c24c3fe431fe7a0df",
+    "skills/duck/SKILL.md": "6ba910508d1a8667f64e50cf04fb881479f041417b73cb4c6e549ead7d26d2ad",
     "skills/duck-figure/agents/openai.yaml": "d5825d32e7252e5939926aa9ea9a6fbadb3689a20491251223dafbf1ca9a683c",
     "skills/duck-figure/SKILL.md": "d91ed408d5e70480bfe08a606161b2435fa7787e0a7f5fca724dc1fa0a65f421",
     "skills/duck-idea/agents/openai.yaml": "8410d0ecad9d861338395d585173b7527e9189c6582909c83fe6b937d003671c",
