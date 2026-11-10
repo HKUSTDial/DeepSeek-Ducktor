@@ -29,7 +29,7 @@ Besides Ducktor's 23 experience cards, the plugin ships 11 of its own (`mentor/c
 
 All three are optional.
 
-- `duckRoot`: absolute path of your own Ducktor checkout, used instead of the copy in this plugin.
+- `duckRoot`: absolute path of your own Ducktor checkout, used instead of the copy in this plugin. The check before edits needs Ducktor 0.2.4 or newer.
 - `sessionContext`: on by default. Off leaves only the commands; sessions no longer get the opening context and resident rules.
 - `subagents`: off by default. On gives subagent sessions the opening context too; they cannot stop to ask you, which is why the default leaves them out.
 

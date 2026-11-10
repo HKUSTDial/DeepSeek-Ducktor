@@ -214,7 +214,7 @@ All three are optional. If you installed with way 1 or 2, change them in "配置
 
 | Field | Default | Meaning |
 |---|---|---|
-| `duckRoot` | the `duck/` that comes with the plugin | use your own Ducktor folder; must be an absolute path |
+| `duckRoot` | the `duck/` that comes with the plugin | use your own Ducktor folder; must be an absolute path. The check before edits needs Ducktor 0.2.4 or newer; with an older one the commands and the opening context work, and edits are not checked |
 | `sessionContext` | `true` | when off, only the commands stay; sessions no longer get the session note and the always-on rules |
 | `subagents` | `false` | subagent sessions also get the session note. Off by default, because a subagent cannot stop and ask the student |
 
@@ -292,7 +292,7 @@ The first version on 2026-10-25 was called deepseek-ducktor. On 10-26 it was ren
 <details>
 <summary><b>6. Why is the first draft edit of each turn stopped once?</b></summary>
 <br>
-With Ducktor on (on or quiet), the first time in each turn that the AI edits a text draft (.md, .tex, .txt and the like), the plugin refuses that edit and gives the AI a fixed reminder: check whether the edit makes a research decision you have not made yet, or takes a side where your draft contradicts itself. After reading it, the AI edits again. Edits sent together in one step are refused together, once. Code, the records in <code>.duck/</code> and the edits of sub-agents are not stopped, and nothing is stopped when Ducktor is off. If the refused edit rewrote a whole file, the AI writes it again, which takes about as long as the first time. In the <code>--json</code> output of the command line, the refusal is a tool result with the status error, and its content is the reminder; how the web UI shows it was not checked with a screenshot. When the AI writes a draft with a shell command, this check does not stop it.
+With Ducktor on (on or quiet), the first time in each turn that the AI edits a text draft (.md, .tex, .txt and the like), the plugin refuses that edit and gives the AI a fixed reminder: check whether the edit makes a research decision you have not made yet, or takes a side where your draft contradicts itself. After reading it, the AI edits again. The check makes sure that the AI reads the reminder before it edits; it does not make sure that the AI follows it. On DeepSeek-Ducktor, in the tests the AI often took the refusal to mean that the edit was wrong: it changed the edit when it sent it again, and sometimes undid something you had already decided (for example, a choice you had left to it with "you decide" went back to undecided, and you were asked again); it also stopped to ask about wording-only edits. The numbers and examples are in the known issues of 0.2.4 in Ducktor's CHANGELOG. Edits sent together in one step are refused together, once. Code, the records in <code>.duck/</code> and the edits of sub-agents are not stopped, and nothing is stopped when Ducktor is off. If the refused edit rewrote a whole file, the AI writes it again, which takes about as long as the first time. In the <code>--json</code> output of the command line, the refusal is a tool result with the status error, and its content is the reminder; how the web UI shows it was not checked with a screenshot. When the AI writes a draft with a shell command, this check does not stop it.
 </details>
 
 ---

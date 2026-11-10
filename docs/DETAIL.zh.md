@@ -63,7 +63,7 @@ DeepSeek-Ducktor 是社区做的插件，不是 DeepSeek 官方出品，和 Deep
 
 插件的设置页有三项，都可以不填：
 
-- `duckRoot`：用你自己的 Ducktor 目录（绝对路径），不用插件自带的那份。
+- `duckRoot`：用你自己的 Ducktor 目录（绝对路径），不用插件自带的那份。改稿前的检查要 Ducktor 0.2.4 或更新。
 - `sessionContext`：默认开。关掉以后只剩命令，会话不再带开场说明和常驻规则。
 - `subagents`：默认关。打开后子代理会话也带开场说明；默认不带，因为子代理没法停下来问你。
 
