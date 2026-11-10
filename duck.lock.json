@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "yinwu01/Ducktor",
-    "ref": "dc049280a76c8127427dc27e4dfd007e38323d26",
-    "commit": "dc049280a76c8127427dc27e4dfd007e38323d26",
-    "committedAt": "2026-11-09T19:29:37-08:00",
-    "subject": "0.2.4: version in the five manifests, CHANGELOG section, INSTALL says which language /duck on writes config.md in"
+    "ref": "b564269560d7910b83f3f6fa1f23685856a1d040",
+    "commit": "b564269560d7910b83f3f6fa1f23685856a1d040",
+    "committedAt": "2026-11-09T21:47:16-08:00",
+    "subject": "Docs after red team round 1: known issues, FAQ 3 and 5, test records match the raw runs"
   },
   "paths": [
     "bin",
@@ -19,7 +19,7 @@
     "package.json"
   ],
   "files": {
-    "bin/duck.js": "a07faa300dce14ad3f12207e538a43729292f49f14ad86660fe2e956929d7045",
+    "bin/duck.js": "62fa31ef9cea4ef6fce7fb3ad2a930d44c72cc67b2744cfa122de11ed772362b",
     "cards/E01.md": "4d74bb05f5daa5411d7afa788a153cb013948a09791f46840eb46e8c9db66991",
     "cards/E02.md": "c1245a3378bb5aa49ba6f5b0ea91a4cea952ae9d248e572bbc4da508ac6c9b3a",
     "cards/E05.md": "7d63cf312b5a9aeeb7b4df96f970c2182dc376b24db64cbb5713fb76b6cd5f34",
