@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "HKUSTDial/Ducktor",
-    "ref": "387baf104d9b0786cdfcb832d936cf77a87efb54",
-    "commit": "387baf104d9b0786cdfcb832d936cf77a87efb54",
-    "committedAt": "2026-11-18T22:21:05-08:00",
-    "subject": "Reminder and resident rules after red team round 1 (user, 11-10 and 11-18)"
+    "ref": "bd07fe42ace33a7c13671b5dc6d2cbc56da7676d",
+    "commit": "bd07fe42ace33a7c13671b5dc6d2cbc56da7676d",
+    "committedAt": "2026-11-18T22:21:27-08:00",
+    "subject": "Merge remote-tracking branch 'origin/main' into release-0.2.4"
   },
   "paths": [
     "bin",
