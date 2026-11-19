@@ -16,7 +16,7 @@
 <p align="center">
   <b>A methodology and learning-loop plugin for research in the age of AI, native to DeepSeek Harness</b><br>
   When agents turn research into a black box of <code>Data In, Paper Out</code>, how does a researcher avoid becoming a passive spectator?<br>
-  DeepSeek-Ducktor brings all of <a href="https://github.com/yinwu01/Ducktor">Ducktor</a> into DeepSeek Harness. While your research moves forward, it adds the missing mentor guidance and the training loop of research.<br>
+  DeepSeek-Ducktor brings all of <a href="https://github.com/HKUSTDial/Ducktor">Ducktor</a> into DeepSeek Harness. While your research moves forward, it adds the missing mentor guidance and the training loop of research.<br>
   <b>Trust me, I'm a Ducktor.</b>
 </p>
 
@@ -61,7 +61,7 @@ The idea comes from <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging
 </details>
 
 > [!TIP]
-> **Using Claude Code or Codex?** Use [Ducktor](https://github.com/yinwu01/Ducktor/blob/main/i18n/README.en.md): the same commands and rules as DeepSeek-Ducktor, the original version for Claude Code and Codex.
+> **Using Claude Code or Codex?** Use [Ducktor](https://github.com/HKUSTDial/Ducktor/blob/main/i18n/README.en.md): the same commands and rules as DeepSeek-Ducktor, the original version for Claude Code and Codex.
 
 ---
 
@@ -135,7 +135,7 @@ At run time the plugin reads only local files and sends no network requests itse
 Let your agent help. Send it this message:
 
 ```text
-Install the DeepSeek-Ducktor plugin for me: https://github.com/yinwu01/DeepSeek-Ducktor
+Install the DeepSeek-Ducktor plugin for me: https://github.com/HKUSTDial/DeepSeek-Ducktor
 Follow the steps in the "Install and quick start" section of docs/README.en.md in that repository, then tell me how to start.
 ```
 
@@ -293,8 +293,8 @@ The first version on 2026-10-25 was called deepseek-ducktor. On 10-26 it was ren
 ## Sources and thanks
 
 * **The name**: from rubber duck debugging ([Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)), from the book *The Pragmatic Programmer*.
-* **Core method and skill library**: the [Ducktor](https://github.com/yinwu01/Ducktor) inside this plugin is adapted from [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills), open-sourced by the Data Intelligence and Analytics Lab of the Hong Kong University of Science and Technology (Guangzhou).
-* **The Supervisor series**: we now officially make Supervisor a series of our lab. [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) is the first in the series, and [Ducktor](https://github.com/yinwu01/Ducktor) and DeepSeek-Ducktor are the second and the third. We will keep open-sourcing more work and collaborate with the community.
+* **Core method and skill library**: the [Ducktor](https://github.com/HKUSTDial/Ducktor) inside this plugin is adapted from [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills), open-sourced by the Data Intelligence and Analytics Lab of the Hong Kong University of Science and Technology (Guangzhou).
+* **The Supervisor series**: we now officially make Supervisor a series of our lab. [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) is the first in the series, and [Ducktor](https://github.com/HKUSTDial/Ducktor) and DeepSeek-Ducktor are the second and the third. We will keep open-sourcing more work and collaborate with the community.
 
 ---
 

@@ -16,7 +16,7 @@
 <p align="center">
   <b>面向 AI 科研时代的「方法论与认知闭环」插件，DeepSeek Harness 原生版</b><br>
   当 Agent 将科研流程加速为 <code>Data In, Paper Out</code> 的黑盒，研究者如何避免沦为被动的旁观者？<br>
-  DeepSeek-Ducktor 把 <a href="https://github.com/yinwu01/Ducktor">Ducktor</a> 完整装进 DeepSeek Harness，在推进研究的同时，为你补齐缺失的导师指引与科研训练闭环。<br>
+  DeepSeek-Ducktor 把 <a href="https://github.com/HKUSTDial/Ducktor">Ducktor</a> 完整装进 DeepSeek Harness，在推进研究的同时，为你补齐缺失的导师指引与科研训练闭环。<br>
   <b>Trust me, I'm a Ducktor.</b>
 </p>
 
@@ -60,7 +60,7 @@
 </details>
 
 > [!TIP]
-> **用 Claude Code 或 Codex？** 请用 [Ducktor](https://github.com/yinwu01/Ducktor)：命令和规则与 DeepSeek-Ducktor 一致，是 Claude Code、Codex 上的原版。
+> **用 Claude Code 或 Codex？** 请用 [Ducktor](https://github.com/HKUSTDial/Ducktor)：命令和规则与 DeepSeek-Ducktor 一致，是 Claude Code、Codex 上的原版。
 
 ---
 
@@ -134,7 +134,7 @@ DeepSeek-Ducktor 并不替换你现有的模型，而是作为一套规则、技
 让你的 agent 帮忙，把下面这段话发给它：
 
 ```text
-帮我安装 DeepSeek-Ducktor 插件：https://github.com/yinwu01/DeepSeek-Ducktor
+帮我安装 DeepSeek-Ducktor 插件：https://github.com/HKUSTDial/DeepSeek-Ducktor
 照仓库 README 里「安装与快速开始」一节的步骤装好，装完告诉我怎么开始用。
 ```
 
@@ -292,8 +292,8 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 ## 来源与致谢
 
 * **命名灵感**：源自《程序员修炼之道》（*The Pragmatic Programmer*）提出的小黄鸭调试法（[Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)）。
-* **核心方法论与技能库**：本插件内置的 [Ducktor](https://github.com/yinwu01/Ducktor) 改编自香港科技大学（广州）数据智能与分析实验室开源的 [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills)。
-* **Supervisor 系列**：我们正式将 Supervisor 作为一个实验室系列：[Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) 是系列的第一个，[Ducktor](https://github.com/yinwu01/Ducktor) 与 DeepSeek-Ducktor 是第二和第三个。接下来我们还会继续开源，并与社区合作。
+* **核心方法论与技能库**：本插件内置的 [Ducktor](https://github.com/HKUSTDial/Ducktor) 改编自香港科技大学（广州）数据智能与分析实验室开源的 [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills)。
+* **Supervisor 系列**：我们正式将 Supervisor 作为一个实验室系列：[Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) 是系列的第一个，[Ducktor](https://github.com/HKUSTDial/Ducktor) 与 DeepSeek-Ducktor 是第二和第三个。接下来我们还会继续开源，并与社区合作。
 
 ---
 
