@@ -16,7 +16,7 @@
 <p align="center">
   <b>A methodology and learning-loop plugin for research in the age of AI, native to DeepSeek Harness</b><br>
   When agents turn research into a black box of <code>Data In, Paper Out</code>, how does a researcher avoid becoming a passive spectator?<br>
-  DeepSeek-Ducktor brings all of <a href="https://github.com/yinwu01/Ducktor">Ducktor</a> into DeepSeek Harness. While your research moves forward, it adds the missing mentor guidance and the training loop of research.<br>
+  DeepSeek-Ducktor brings all of <a href="https://github.com/HKUSTDial/Ducktor">Ducktor</a> into DeepSeek Harness. While your research moves forward, it adds the missing mentor guidance and the training loop of research.<br>
   <b>Trust me, I'm a Ducktor.</b>
 </p>
 
@@ -30,7 +30,7 @@
 </p>
 
 <p align="center">
-  <img src="../assets/demo.webp" width="880" alt="An illustration, not a screen recording. Two DeepSeek Harness chat windows (the interface labels stay in Chinese) get the same task: “The experiments are done; results are in results/. Write it up as a NeurIPS paper.” On the left, without Ducktor, the AI quickly writes paper/main.tex and says it is done; it adds that, not to overclaim, the ablations ran once, so gaps of 0.1 to 0.3 get no conclusion. You get a paper. On the right, you first send /duck on to turn Ducktor on in this project: everyday work also gets the why and a decision log, and results are checked before they go into the paper. Then the same request. Ducktor reads the results, says it will write with /duck-write, and first asks: the ablations ran once and the 0.1 to 0.3 gaps were not compared with seed variation; add seeds first, or write first? You answer “You decide.” After writing, it explains why: write first, the ablations report numbers and draw no conclusion, so noise is not called a finding; each of the three claims maps to a section a reviewer can check. The decision line records three choices, all made by the AI. Then /duck-learn: it asks which step you decided and which you would redo; you skip. It gives the goal and what happened; what a top advisor checks is that a gap must beat seed variation (card E05, a built-in Ducktor card, not a paper), and the ablations ran once; it lists the judgments left to the AI, says you can ask to decide next time, and gives the next steps. The look-back goes into .duck/reports/ and the principle into the notebook. Last, /duck-why on the intro step: the part most worth learning is paragraph 2, which says what makes translation itself hard before giving the method, and maps each difficulty to a module (self-attention, positional encoding). Widom, Tips for Writing Technical Papers: the intro must say why it is hard. The principle “Map each difficulty to a module.” goes into the notebook, with what to do first next time. It ends by noting that the account of how it was done is inferred from the files and the conversation record.">
+  <img src="../assets/demo.webp" width="880" alt="An illustration, not a screen recording. Headline: Agents do research; Ducktor learns it with you. Two DeepSeek Harness chat windows (the interface labels stay in Chinese) get the same request: “The experiments are done; results are in results/. Write it up as a NeurIPS paper.” On the left, without Ducktor, the AI writes paper/main.tex and adds that, to avoid overclaiming, the ablations ran once, so gaps of 0.1 to 0.3 get no conclusion. On the right, you first send /duck on: from then on it also explains why in ordinary work, records who decided, and runs three checks before results go into the paper. With the same request, the AI says it writes the whole paper with /duck-write and names the main weakness first: every number comes from one run, so a BLEU gap cannot be compared with seed variation; it writes the numbers as they are, without “significant”, and adds seeds if you agree. After writing, it gives one reason: base leads only on EN-DE, and on EN-FR its 38.1 is below every baseline; before writing a claim, look for the row that refutes it. Three decision lines say which choice you made and which the AI made. Then /duck-learn: the EN-FR sentence the AI wrote in the abstract is only 0.51 above 41.29, from a single run, so add seeds or write “on par”; the derived numbers were recomputed from results/ and match. Last, /duck-why on the intro step: paragraph 2, after the limits of RNNs and convolution, says what makes translation itself hard (distant words must connect), and self-attention answers it (paper/main.tex, line 49); the principle “State the problem’s difficulties first, and map each one to a module.” goes into the notebook.">
 </p>
 
 <p align="center">
@@ -52,7 +52,7 @@ From community feedback, we found that many researchers rely on `Supervisor-Skil
 2. **Break the process down and stay aligned in real time**: at the key points where the agent moves the research forward, Ducktor shows the academic trade-offs behind them and turns hidden judgments into explicit principles that you can learn.
 3. **Grow both skill and output**: while you polish a high-quality paper, Ducktor produces a traceable decision log and personal research notes, so that the researcher's academic intuition grows together with the agent.
 
-**DeepSeek-Ducktor** is our native plugin for DeepSeek Harness: it puts Ducktor in unchanged, so that you can use commands such as `/duck-review` in DeepSeek Harness too, and it adds the "Ducktor" tab in the web interface and 11 more experience cards.
+**DeepSeek-Ducktor** is our native plugin for DeepSeek Harness: it puts Ducktor in unchanged, so that you can use commands such as `/duck-review` in DeepSeek Harness too, and it adds the "Ducktor" tab in the web interface and 10 more experience cards.
 
 <details>
 <summary><b>💡 Why the name Ducktor?</b></summary>
@@ -61,7 +61,7 @@ The idea comes from <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging
 </details>
 
 > [!TIP]
-> **Using Claude Code or Codex?** Use [Ducktor](https://github.com/yinwu01/Ducktor/blob/main/i18n/README.en.md): the same commands and rules as DeepSeek-Ducktor, the original version for Claude Code and Codex.
+> **Using Claude Code or Codex?** Use [Ducktor](https://github.com/HKUSTDial/Ducktor/blob/main/i18n/README.en.md): the same commands and rules as DeepSeek-Ducktor, the original version for Claude Code and Codex.
 
 ---
 
@@ -108,7 +108,7 @@ All records are Markdown files in `.duck/` of the project: the notebook `noteboo
 
 The rules tell Ducktor: when it explains a principle, the grounds come only from the experience cards, the summaries of mentors' essays (`cards/MENTORS.md`), and named sections of the research handbook (`handbook/`). In the conversation it turns them into experience; names, titles and card numbers go into the report, and it gives them when you ask. If nothing fits, it says that this is its own judgment.
 
-There are two sets of experience cards. Ducktor has 23. This plugin adds 11 (`mentor/cards/`), on reading papers, entering a new field, experiment habits, meetings with your advisor, and rules for research and review with AI. Each card names its source and links to the original. We checked the cards against the originals when we wrote them, and before release two independent model sessions checked them line by line as a red team (not a human review).
+There are two sets of experience cards. Ducktor has 23. This plugin adds 10 (`mentor/cards/`), on reading papers, entering a new field, experiment habits, meetings with your advisor, and rules for using AI when reviewing. Each card names its source and links to the original. We checked the cards against the originals when we wrote them, and before release two independent model sessions checked them line by line as a red team (not a human review).
 
 ---
 
@@ -118,7 +118,7 @@ There are two sets of experience cards. Ducktor has 23. This plugin adds 11 (`me
 * `lib/duck.js`: the parts that do not depend on dsh (find the root, read SKILL.md, build and check the session note); unit tests run it with Node directly. The DeepSeek Harness addendum after the session note is also here; it also says where the extra cards are, that references need links, and to write `background.md` the first time you explore a direction.
 * `client/client.js`: the "Ducktor" tab, a hand-written browser plugin with no bundling; it uses the React of the page, and reads files through the dsh workspace file interface.
 * `lib/cards.js`: reads the cards (Ducktor's and `mentor/cards/`); the server reads them and sends them with the web page to the tab.
-* `mentor/cards/`: the 11 extra experience cards of this plugin, in the same format as Ducktor's cards, with different card numbers; `INDEX.md` is generated by `node scripts/mentor-index.mjs`.
+* `mentor/cards/`: the 10 extra experience cards of this plugin, in the same format as Ducktor's cards, with different card numbers; `INDEX.md` is generated by `node scripts/mentor-index.mjs`.
 * `duck/`: an unchanged copy of Ducktor; do not edit it by hand. `duck.lock.json` records the commit it comes from and the sha256 of each file. To update Ducktor:
 
   ```sh
@@ -135,7 +135,7 @@ At run time the plugin reads only local files and sends no network requests itse
 Let your agent help. Send it this message:
 
 ```text
-Install the DeepSeek-Ducktor plugin for me: https://github.com/yinwu01/DeepSeek-Ducktor
+Install the DeepSeek-Ducktor plugin for me: https://github.com/HKUSTDial/DeepSeek-Ducktor
 Follow the steps in the "Install and quick start" section of docs/README.en.md in that repository, then tell me how to start.
 ```
 
@@ -262,7 +262,7 @@ All three are optional. If you installed with way 1 or 2, change them in "配置
 <details>
 <summary><b>1. How is it related to Ducktor?</b></summary>
 <br>
-<code>duck/</code> is an unchanged copy of Ducktor, and <code>duck.lock.json</code> records which commit it comes from. This plugin adds the DeepSeek Harness integration, the "Ducktor" tab and 11 extra cards.
+<code>duck/</code> is an unchanged copy of Ducktor, and <code>duck.lock.json</code> records which commit it comes from. This plugin adds the DeepSeek Harness integration, the "Ducktor" tab and 10 extra cards.
 </details>
 
 <details>
@@ -300,8 +300,8 @@ With Ducktor on (on or quiet), the first time in each turn that the AI edits a t
 ## Sources and thanks
 
 * **The name**: from rubber duck debugging ([Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)), from the book *The Pragmatic Programmer*.
-* **Core method and skill library**: the [Ducktor](https://github.com/yinwu01/Ducktor) inside this plugin is adapted from [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills), open-sourced by the Data Intelligence and Analytics Lab of the Hong Kong University of Science and Technology (Guangzhou).
-* **The Supervisor series**: we now officially make Supervisor a series of our lab. [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) is the first in the series, and [Ducktor](https://github.com/yinwu01/Ducktor) and DeepSeek-Ducktor are the second and the third. We will keep open-sourcing more work and collaborate with the community.
+* **Core method and skill library**: the [Ducktor](https://github.com/HKUSTDial/Ducktor) inside this plugin is adapted from [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills), open-sourced by the Data Intelligence and Analytics Lab of the Hong Kong University of Science and Technology (Guangzhou).
+* **The Supervisor series**: we now officially make Supervisor a series of our lab. [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) is the first in the series, and [Ducktor](https://github.com/HKUSTDial/Ducktor) and DeepSeek-Ducktor are the second and the third. We will keep open-sourcing more work and collaborate with the community.
 
 ---
 

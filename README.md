@@ -16,7 +16,7 @@
 <p align="center">
   <b>面向 AI 科研时代的「方法论与认知闭环」插件，DeepSeek Harness 原生版</b><br>
   当 Agent 将科研流程加速为 <code>Data In, Paper Out</code> 的黑盒，研究者如何避免沦为被动的旁观者？<br>
-  DeepSeek-Ducktor 把 <a href="https://github.com/yinwu01/Ducktor">Ducktor</a> 完整装进 DeepSeek Harness，在推进研究的同时，为你补齐缺失的导师指引与科研训练闭环。<br>
+  DeepSeek-Ducktor 把 <a href="https://github.com/HKUSTDial/Ducktor">Ducktor</a> 完整装进 DeepSeek Harness，在推进研究的同时，为你补齐缺失的导师指引与科研训练闭环。<br>
   <b>Trust me, I'm a Ducktor.</b>
 </p>
 
@@ -30,7 +30,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/demo.zh-CN.webp" width="880" alt="示意动图，不是录屏。两个 DeepSeek Harness 对话窗口做同一件事：「实验都做完了，结果在 results/ 里。帮我写成一篇 NeurIPS 论文。」左边没装 Ducktor：AI 很快写完 paper/main.tex，说都做完了，又说为了不夸大，消融只跑了一次，0.1 到 0.3 的差没下结论。你拿到一篇论文。右边先发 /duck on，在这个项目开启 Ducktor：平时干活也讲为什么、记决策，结果进论文前先对标准。再说同一句话。Ducktor 读完结果，说按 /duck-write 来写，动笔前先说：消融只跑了一次，0.1 到 0.3 的差没和 seed 间的波动比过，先补 seed，还是先写？你回了一句「你定」。写完以后它讲为什么：先写不先补 seed，消融只报数，不下结论，免得把波动写成发现；三条贡献各对一节，审稿人能逐条核对。决策行记下三件事：先写不先补 seed、贡献写三条、引言先写挑战再给方法，都是 AI 定的。然后发 /duck-learn：它先问这次哪一步是你自己定的、哪一步最想重来，你答「跳过」。它讲本来想干什么、实际怎样；顶级导师会盯的是差距要大过种子间的波动（卡 E05，Ducktor 自带的经验卡，不是文献），这次消融只跑了一次；再列出这次交给 AI 的判断，说下次想自己定，说一声就行；下一步是先弄清引言为什么这样排，消融补两个 seed。复盘存进 .duck/reports/，原则记进笔记本。最后发 /duck-why，问写引言这一步有什么值得学习和注意的。Ducktor 说最值得学的是引言第二段：讲完 RNN、卷积的不足，先写翻译本身难在哪，远处的词也要连上，词序决定意思。这样排是 AI 定的。常见写法是讲完不足就给出方法；有经验的人先写问题的难处，再让每条对上一个模块：远处的词靠自注意力一步连上，词序靠位置编码。Widom 在 Tips for Writing Technical Papers 里说，引言要回答为什么难。这次两处难点各对上了模块，见 paper/main.tex 第 49 行。原则「挑战写问题的难处，每条对上一个模块」记进笔记本，讲解存进 .duck/reports/；下次写引言前，先列出这个问题本身的两三处难点。它最后注明，讲「这次怎么做的」那几句是照文件和对话记录推出来的，AI 当时是不是这么想的，没法确认。">
+  <img src="assets/demo.zh-CN.webp" width="880" alt="示意动图，不是录屏。标题：Agent 负责完成科研；Ducktor 想和你一起学习科研。两个 DeepSeek Harness 对话窗口收到同一句话：「实验都做完了，结果在 results/ 里。帮我写成一篇 NeurIPS 论文。」左边没装 Ducktor：AI 写完 paper/main.tex，说为了不夸大，消融只跑了一次，0.1 到 0.3 的差没下结论。右边先发 /duck on：平时也讲为什么、记谁定的，结果进论文前先查三件事。再说同一句话，AI 说整篇论文按 /duck-write 来写，先说最要紧的一处：每个数都只跑了一次，差距没和种子间的波动比过；先照这些数写，不写「显著」，你点头了再补种子。写完讲一条为什么：base 只在英德领先，英法 38.1 比表里每个基线都低；写结论前，先在表里找能推翻它的那一行。三行决策写明哪件是你定的、哪件是 AI 定的。接着发 /duck-learn：摘要里英法那句是 AI 写的，只比 41.29 高 0.51，又只跑了一次，要么补种子，要么写成「相当」；稿子里推出来的数按 results/ 重算过，都对得上。最后发 /duck-why 问写引言这一步：第二段讲完 RNN、卷积的不足，先写翻译本身难在哪（远处的词也要连上），再由自注意力回答（paper/main.tex 第 49 行）；原则「先写问题的难处，每条难处对上一个模块」记进笔记本。">
 </p>
 
 <p align="center">
@@ -51,7 +51,7 @@
 2. **过程拆解与实时对齐**：在 Agent 推进研究的关键节点，Ducktor 主动暴露背后的学术取舍（Trade-offs），将隐性判断转化为可习得的显性原则。
 3. **能力与成果双重沉淀**：在打磨出高质量论文的同时，生成可溯源的决策日志与个人科研笔记，让研究者的学术直觉与 Agent 同步进化。
 
-**DeepSeek-Ducktor** 是我们为 DeepSeek Harness 做的原生插件：把 Ducktor 原样装进去，让你在 DeepSeek Harness 里也能用 `/duck-review` 这类命令；另外加了 Web 界面里的「Ducktor」页签和 11 张经验卡。
+**DeepSeek-Ducktor** 是我们为 DeepSeek Harness 做的原生插件：把 Ducktor 原样装进去，让你在 DeepSeek Harness 里也能用 `/duck-review` 这类命令；另外加了 Web 界面里的「Ducktor」页签和 10 张经验卡。
 
 <details>
 <summary><b>💡 为什么取名为 Ducktor？</b></summary>
@@ -60,7 +60,7 @@
 </details>
 
 > [!TIP]
-> **用 Claude Code 或 Codex？** 请用 [Ducktor](https://github.com/yinwu01/Ducktor)：命令和规则与 DeepSeek-Ducktor 一致，是 Claude Code、Codex 上的原版。
+> **用 Claude Code 或 Codex？** 请用 [Ducktor](https://github.com/HKUSTDial/Ducktor)：命令和规则与 DeepSeek-Ducktor 一致，是 Claude Code、Codex 上的原版。
 
 ---
 
@@ -107,7 +107,7 @@ DeepSeek-Ducktor 并不替换你现有的模型，而是作为一套规则、技
 
 规则要求 Ducktor：讲道理时，依据只从经验卡、名家文章的转述（`cards/MENTORS.md`）和科研手册（`handbook/`）的具体章节里取。对话里化成经验来讲，人名、文章和卡号写进报告，你问起时直接给；找不到依据，就直说这是它自己的判断。
 
-经验卡有两组。Ducktor 带 23 张。这个插件另带 11 张（`mentor/cards/`），讲读论文、进新方向、实验习惯、和导师开会、用 AI 做研究和审稿的规矩。每张写明出处，附原文链接。写卡时对过原文，发布前又让两个独立的模型会话当红队逐条复核过（不是人工审）。
+经验卡有两组。Ducktor 带 23 张。这个插件另带 10 张（`mentor/cards/`），讲读论文、进新方向、实验习惯、和导师开会、审稿时用 AI 的规矩。每张写明出处，附原文链接。写卡时对过原文，发布前又让两个独立的模型会话当红队逐条复核过（不是人工审）。
 
 ---
 
@@ -117,7 +117,7 @@ DeepSeek-Ducktor 并不替换你现有的模型，而是作为一套规则、技
 * `lib/duck.js`：和 dsh 无关的部分（找根目录、读 SKILL.md、生成和判断开场说明），单元测试直接用 Node 跑。开场说明后面那段 DeepSeek Harness 附注也在这里，附注里还写着另带的卡片在哪、参考文献要带链接、第一次摸方向时写 `background.md`。
 * `client/client.js`：「Ducktor」页签，手写的浏览器端插件，不用打包；React 用页面自带的那份，文件通过 dsh 的工作区文件接口读。
 * `lib/cards.js`：读卡片（Ducktor 的和 `mentor/cards/` 的），服务端读好后随网页一起发给页签。
-* `mentor/cards/`：本插件另带的 11 张经验卡片，格式和 Ducktor 的卡一样，卡号不重；`INDEX.md` 由 `node scripts/mentor-index.mjs` 生成。
+* `mentor/cards/`：本插件另带的 10 张经验卡片，格式和 Ducktor 的卡一样，卡号不重；`INDEX.md` 由 `node scripts/mentor-index.mjs` 生成。
 * `duck/`：Ducktor 原样拷贝，不手改。`duck.lock.json` 记着来自哪个提交和每个文件的 sha256。更新 Ducktor：
 
   ```sh
@@ -134,7 +134,7 @@ DeepSeek-Ducktor 并不替换你现有的模型，而是作为一套规则、技
 让你的 agent 帮忙，把下面这段话发给它：
 
 ```text
-帮我安装 DeepSeek-Ducktor 插件：https://github.com/yinwu01/DeepSeek-Ducktor
+帮我安装 DeepSeek-Ducktor 插件：https://github.com/HKUSTDial/DeepSeek-Ducktor
 照仓库 README 里「安装与快速开始」一节的步骤装好，装完告诉我怎么开始用。
 ```
 
@@ -261,7 +261,7 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 <details>
 <summary><b>1. 和 Ducktor 是什么关系？</b></summary>
 <br>
-<code>duck/</code> 是 Ducktor 的原样拷贝，<code>duck.lock.json</code> 记着它来自哪个提交。这个插件加的是 DeepSeek Harness 的接入、「Ducktor」页签和另带的 11 张卡。
+<code>duck/</code> 是 Ducktor 的原样拷贝，<code>duck.lock.json</code> 记着它来自哪个提交。这个插件加的是 DeepSeek Harness 的接入、「Ducktor」页签和另带的 10 张卡。
 </details>
 
 <details>
@@ -299,8 +299,8 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 ## 来源与致谢
 
 * **命名灵感**：源自《程序员修炼之道》（*The Pragmatic Programmer*）提出的小黄鸭调试法（[Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)）。
-* **核心方法论与技能库**：本插件内置的 [Ducktor](https://github.com/yinwu01/Ducktor) 改编自香港科技大学（广州）数据智能与分析实验室开源的 [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills)。
-* **Supervisor 系列**：我们正式将 Supervisor 作为一个实验室系列：[Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) 是系列的第一个，[Ducktor](https://github.com/yinwu01/Ducktor) 与 DeepSeek-Ducktor 是第二和第三个。接下来我们还会继续开源，并与社区合作。
+* **核心方法论与技能库**：本插件内置的 [Ducktor](https://github.com/HKUSTDial/Ducktor) 改编自香港科技大学（广州）数据智能与分析实验室开源的 [Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills)。
+* **Supervisor 系列**：我们正式将 Supervisor 作为一个实验室系列：[Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) 是系列的第一个，[Ducktor](https://github.com/HKUSTDial/Ducktor) 与 DeepSeek-Ducktor 是第二和第三个。接下来我们还会继续开源，并与社区合作。
 
 ---
 
