@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "HKUSTDial/Ducktor",
-    "ref": "31b5df635a99ca7eeafcddc64e2d546ed1903e37",
-    "commit": "31b5df635a99ca7eeafcddc64e2d546ed1903e37",
-    "committedAt": "2026-11-20T06:10:27-08:00",
-    "subject": "library/ synced to Supervisor-Skills 4c71810: all 10 original skills are CC BY-NC-SA 4.0"
+    "ref": "585c64138519eb9ebf19363f302714781ddb7a42",
+    "commit": "585c64138519eb9ebf19363f302714781ddb7a42",
+    "committedAt": "2026-11-20T06:20:31-08:00",
+    "subject": "License wording after red team round 8: README and how-it-works name 4c71810, library/README says CC BY-NC-SA 4.0 for all and that drawio-reconstruction is not carried, the upstream LICENSE is NC-SA from 2.0.0 on; testing.md notes the library/ sync was not retested"
   },
   "paths": [
     "bin",
@@ -145,7 +145,7 @@
     "library/pre-submission-reviewer/references/logic-and-structure.md": "9442f79abc4088bab06da13c362d0bffc760d1fd22379ae5cb3f144d3358abec",
     "library/pre-submission-reviewer/references/section-guides.md": "16201aaa845ed7fafcc676ec9d36c084d31f0494bba7a53ff649912ba5fc71f6",
     "library/pre-submission-reviewer/SKILL.md": "58852d34be1e66ecf3425649dbe094f837207c2ebcf558b28a1e52882e4ae90e",
-    "library/README.md": "3a7821a499899f8b536281bc7b6d1f717bb56301b86314153eb2581028cf32ec",
+    "library/README.md": "730e4820367b779eb8844e7eb5b72d11a642893b37d6e73c3abd17a72f38ef6d",
     "library/tech-paper-template/references/consistency-checks.md": "887dc40aaee06f64c347794633135a3f99b3b7f68f47917bc4061134c7ff1bc3",
     "library/tech-paper-template/references/paper-types.md": "879c44111cb4c5724ba0bbaec0d691ac142f41244731e1f1c779a14bd4360ff4",
     "library/tech-paper-template/references/thinking-template.md": "2954ed9e9fa82136707d85348ccd0a232a55a236edb25811b23ae1ab75d6e86b",
@@ -161,7 +161,7 @@
     "LICENSE": "3a26afaa6d441e0ec2e6b27530e055194b35f49c54aa7dd33097109393f02070",
     "LICENSES/CC-BY-NC-SA-4.0.txt": "b35c958b79726c115cf817635abcbc2aa1121cae5e9a1c22819f7c44f58fcaf0",
     "LICENSES/MIT.txt": "d87b3ae1907d415c0e8e75e869b4ec3cc94cb06fcd0d223fe388c4316b5f8dd6",
-    "LICENSES/README.md": "ec0e1a6791cd37f76a88ef8e177b4786f4e017a3f828069e429128fa84d38667",
+    "LICENSES/README.md": "ed485e7c11efe12430b4f82f1f510e1f71b22853b0e7c009778c515147a47954",
     "package.json": "efca35b72bebc4c05aab8ff3ce7166070ed43f036173d2de7d69829c4e4f938c",
     "rules/agents-header.md": "0919abb3ae5c51e9e149613447ae8dc44560bb7c1e2d7ff08eedda4f2ea80c00",
     "rules/checkpoint.md": "d81f7326543955067af505433abddb14ef300239ebf0945e664348e150475cb9",
