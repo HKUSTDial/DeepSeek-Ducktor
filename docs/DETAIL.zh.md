@@ -77,4 +77,4 @@ DeepSeek-Ducktor 是社区做的插件，不是 DeepSeek 官方出品，和 Deep
 
 ## 许可
 
-插件代码（含页签）是 MIT，插件的文档和另带的经验卡片（`mentor/`）是 CC BY-NC-SA 4.0。`duck/` 里的 Ducktor 按目录分：文字（skills/、rules/、cards/、handbook/）是 CC BY-NC-SA 4.0，不可商用；`library/` 里的原技能各自保留原来的许可；代码是 MIT。Ducktor 改编自 Supervisor-Skills（骆昱宇及贡献者，CC BY-NC-SA 4.0）。
+插件代码（含页签）是 MIT，插件的文档和另带的经验卡片（`mentor/`）是 CC BY-NC-SA 4.0。`duck/` 里的 Ducktor 按目录分：文字（skills/、rules/、cards/、handbook/）是 CC BY-NC-SA 4.0，不可商用；`library/` 里的原技能沿用 Supervisor-Skills 的 CC BY-NC-SA 4.0；代码是 MIT。Ducktor 改编自 Supervisor-Skills（骆昱宇及贡献者，CC BY-NC-SA 4.0）。

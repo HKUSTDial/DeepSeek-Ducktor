@@ -43,4 +43,4 @@ All three are optional.
 
 ## License
 
-Plugin code (including the tab): MIT; plugin documentation and the extra cards (`mentor/`): CC BY-NC-SA 4.0. Ducktor in `duck/` is licensed by directory: its text (skills/, rules/, cards/, handbook/) is CC BY-NC-SA 4.0 (non-commercial), each original skill in `library/` keeps its own license, and its code is MIT. Ducktor is adapted from Supervisor-Skills by Yuyu Luo and contributors (CC BY-NC-SA 4.0).
+Plugin code (including the tab): MIT; plugin documentation and the extra cards (`mentor/`): CC BY-NC-SA 4.0. Ducktor in `duck/` is licensed by directory: its text (skills/, rules/, cards/, handbook/) is CC BY-NC-SA 4.0 (non-commercial), the original skills in `library/` keep the CC BY-NC-SA 4.0 license of Supervisor-Skills, and its code is MIT. Ducktor is adapted from Supervisor-Skills by Yuyu Luo and contributors (CC BY-NC-SA 4.0).
