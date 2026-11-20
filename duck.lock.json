@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "HKUSTDial/Ducktor",
-    "ref": "f2b7bf6668db88e593a534d545bbca66ff74c289",
-    "commit": "f2b7bf6668db88e593a534d545bbca66ff74c289",
-    "committedAt": "2026-11-20T05:29:18-08:00",
-    "subject": "Docs and the e2e check after red team round 4: the 0.2.3 loop sentence, all four flip combinations, the third reading's history and its effect, Model 4 counts, what the sample-size records hold; run words match having run once, not 再跑一次"
+    "ref": "3af76faf5ae80ed2e30fa9ffce092b1d664c7cc0",
+    "commit": "3af76faf5ae80ed2e30fa9ffce092b1d664c7cc0",
+    "committedAt": "2026-11-20T05:36:15-08:00",
+    "subject": "testing.md and the e2e check after red team round 5: two saved verdicts changed with the same-line check (the dsh run now passes, the Codex run of 10-18 now fails), four wording changes since 0c784e6, run words no longer match advice such as 就跑一次"
   },
   "paths": [
     "bin",
