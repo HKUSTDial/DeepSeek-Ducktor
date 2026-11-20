@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "HKUSTDial/Ducktor",
-    "ref": "5ed4ef1c753f4e5ad4d04d79b3fa1498a1cb5e16",
-    "commit": "5ed4ef1c753f4e5ad4d04d79b3fa1498a1cb5e16",
-    "committedAt": "2026-11-19T23:26:32-08:00",
-    "subject": "Reminder: keep the open-decision sentences in place, both sides of a contradiction stay, one-choice methods go into the questions (user, 11-19)"
+    "ref": "7595b094f20de006902c664c0a0dfa8ca5d20f89",
+    "commit": "7595b094f20de006902c664c0a0dfa8ca5d20f89",
+    "committedAt": "2026-11-20T01:33:55-08:00",
+    "subject": "how-it-works: injection sizes after the three core.md sentences (5,802 on a 46-character path, worst 7,010) and the 7,100 test that counts the path as 100 characters"
   },
   "paths": [
     "bin",
