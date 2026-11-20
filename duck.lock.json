@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "HKUSTDial/Ducktor",
-    "ref": "bd07fe42ace33a7c13671b5dc6d2cbc56da7676d",
-    "commit": "bd07fe42ace33a7c13671b5dc6d2cbc56da7676d",
-    "committedAt": "2026-11-18T22:21:27-08:00",
-    "subject": "Merge remote-tracking branch 'origin/main' into release-0.2.4"
+    "ref": "5ed4ef1c753f4e5ad4d04d79b3fa1498a1cb5e16",
+    "commit": "5ed4ef1c753f4e5ad4d04d79b3fa1498a1cb5e16",
+    "committedAt": "2026-11-19T23:26:32-08:00",
+    "subject": "Reminder: keep the open-decision sentences in place, both sides of a contradiction stay, one-choice methods go into the questions (user, 11-19)"
   },
   "paths": [
     "bin",
@@ -165,7 +165,7 @@
     "LICENSES/README.md": "4835c5e54a8fe342c7f7bc713c1d6727286aa58f4efaf4639ae122500341a15f",
     "package.json": "9cec17b821913be9ad6adc0addf648ea3260f3eeefe61b884552bd688a0bfae2",
     "rules/agents-header.md": "0919abb3ae5c51e9e149613447ae8dc44560bb7c1e2d7ff08eedda4f2ea80c00",
-    "rules/checkpoint.md": "125c73195ad4da5a269fc6174ed34796007cee7fc2db2cd3f002d53a5ed29368",
+    "rules/checkpoint.md": "d81f7326543955067af505433abddb14ef300239ebf0945e664348e150475cb9",
     "rules/command-basics.md": "bfad2f63e506e22c89b6e4dac2a2fcf0858f4a66b7fde928cee6c180e575cbb6",
     "rules/commands.json": "bd9e692d076dc81fd972a2bf63cdf65511ece3e7bc38970af10027b8a7133f78",
     "rules/core.md": "4366eb2c89b238270cbed1bddad31681ece475a93343f57bf91bd334a8c8334d",
