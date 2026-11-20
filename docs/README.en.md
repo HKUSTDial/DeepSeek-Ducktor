@@ -26,7 +26,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/works%20with-DeepSeek%20Harness-007ec6?style=flat-square" alt="Works with DeepSeek Harness">
-  <a href="#license"><img src="https://img.shields.io/badge/license-MIT%20%C2%B7%20CC%20BY--NC--SA%204.0%20%C2%B7%20CC%20BY%204.0-lightgrey?style=flat-square" alt="License: MIT, CC BY-NC-SA 4.0 and CC BY 4.0"></a>
+  <a href="#license"><img src="https://img.shields.io/badge/license-MIT%20%C2%B7%20CC%20BY--NC--SA%204.0-lightgrey?style=flat-square" alt="License: MIT and CC BY-NC-SA 4.0"></a>
 </p>
 
 <p align="center">
@@ -310,7 +310,7 @@ With Ducktor on (on or quiet), the first time in each turn that the AI edits a t
 This project uses different licenses for different folders:
 * **Plugin code and configuration** (`index.js`, `lib/`, `client/`, `scripts/`, `tests/`, `cordis.patch.yml`): **MIT**.
 * **Documents, display text and images** (`README.md`, `docs/`, `locale/`, `assets/`, `icon.png`), run records (`evals/`) and the extra experience cards (`mentor/`): **CC BY-NC-SA 4.0**, the same as Ducktor's text (it contains passages adapted from Ducktor).
-* **`duck/`**: an unchanged copy of Ducktor, licensed by folder under its own `duck/LICENSE`: the text (skills/, rules/, cards/, handbook/) is CC BY-NC-SA 4.0, non-commercial; the original skills in `library/` keep their own licenses (CC BY 4.0 or CC BY-NC-SA 4.0); the code is MIT.
+* **`duck/`**: an unchanged copy of Ducktor, licensed by folder under its own `duck/LICENSE`: the text (skills/, rules/, cards/, handbook/) is CC BY-NC-SA 4.0, non-commercial; the original skills in `library/` keep the CC BY-NC-SA 4.0 license of Supervisor-Skills; the code is MIT.
 * The DeepSeek Harness interface in the screenshot belongs to its owner and is not covered by this license.
 
 For the full terms, see [LICENSE](../LICENSE).

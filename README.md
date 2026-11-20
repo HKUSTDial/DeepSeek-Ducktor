@@ -26,7 +26,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/works%20with-DeepSeek%20Harness-007ec6?style=flat-square" alt="Works with DeepSeek Harness">
-  <a href="#许可证-license"><img src="https://img.shields.io/badge/license-MIT%20%C2%B7%20CC%20BY--NC--SA%204.0%20%C2%B7%20CC%20BY%204.0-lightgrey?style=flat-square" alt="License: MIT, CC BY-NC-SA 4.0 and CC BY 4.0"></a>
+  <a href="#许可证-license"><img src="https://img.shields.io/badge/license-MIT%20%C2%B7%20CC%20BY--NC--SA%204.0-lightgrey?style=flat-square" alt="License: MIT and CC BY-NC-SA 4.0"></a>
 </p>
 
 <p align="center">
@@ -309,7 +309,7 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 本项目采用分目录多重许可策略：
 * **插件代码和配置**（`index.js`、`lib/`、`client/`、`scripts/`、`tests/`、`cordis.patch.yml`）：**MIT**。
 * **文档、展示文字和图**（`README.md`、`docs/`、`locale/`、`assets/`、`icon.png`）、运行记录（`evals/`）和另带的经验卡片（`mentor/`）：**CC BY-NC-SA 4.0**，和 Ducktor 的文字一样（里面有改写自 Ducktor 的段落）。
-* **`duck/`**：Ducktor 原样拷贝，按它自己的 `duck/LICENSE` 分目录许可：文字（skills/、rules/、cards/、handbook/）是 CC BY-NC-SA 4.0，不可商用；`library/` 里的原技能各自保留原来的许可（CC BY 4.0 或 CC BY-NC-SA 4.0）；代码是 MIT。
+* **`duck/`**：Ducktor 原样拷贝，按它自己的 `duck/LICENSE` 分目录许可：文字（skills/、rules/、cards/、handbook/）是 CC BY-NC-SA 4.0，不可商用；`library/` 里的原技能沿用 Supervisor-Skills 的 CC BY-NC-SA 4.0；代码是 MIT。
 * 截图里的 DeepSeek Harness 界面归其所有者，不在本许可内。
 
 完整许可条款请参阅 [LICENSE](LICENSE)。
