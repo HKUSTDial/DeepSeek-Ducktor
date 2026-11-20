@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "HKUSTDial/Ducktor",
-    "ref": "585c64138519eb9ebf19363f302714781ddb7a42",
-    "commit": "585c64138519eb9ebf19363f302714781ddb7a42",
-    "committedAt": "2026-11-20T06:20:31-08:00",
-    "subject": "License wording after red team round 8: README and how-it-works name 4c71810, library/README says CC BY-NC-SA 4.0 for all and that drawio-reconstruction is not carried, the upstream LICENSE is NC-SA from 2.0.0 on; testing.md notes the library/ sync was not retested"
+    "ref": "5e1b65ee7c39075849f71f29975fd2e4680295df",
+    "commit": "5e1b65ee7c39075849f71f29975fd2e4680295df",
+    "committedAt": "2026-11-20T06:24:19-08:00",
+    "subject": "Merge release-0.2.4: Ducktor 0.2.4"
   },
   "paths": [
     "bin",
@@ -161,7 +161,7 @@
     "LICENSE": "3a26afaa6d441e0ec2e6b27530e055194b35f49c54aa7dd33097109393f02070",
     "LICENSES/CC-BY-NC-SA-4.0.txt": "b35c958b79726c115cf817635abcbc2aa1121cae5e9a1c22819f7c44f58fcaf0",
     "LICENSES/MIT.txt": "d87b3ae1907d415c0e8e75e869b4ec3cc94cb06fcd0d223fe388c4316b5f8dd6",
-    "LICENSES/README.md": "ed485e7c11efe12430b4f82f1f510e1f71b22853b0e7c009778c515147a47954",
+    "LICENSES/README.md": "014d0ecf0756b906508d5c90833e0cf6576898e8a5b13a8b7c9295df20bc407e",
     "package.json": "efca35b72bebc4c05aab8ff3ce7166070ed43f036173d2de7d69829c4e4f938c",
     "rules/agents-header.md": "0919abb3ae5c51e9e149613447ae8dc44560bb7c1e2d7ff08eedda4f2ea80c00",
     "rules/checkpoint.md": "d81f7326543955067af505433abddb14ef300239ebf0945e664348e150475cb9",
