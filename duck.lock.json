@@ -2,10 +2,10 @@
   "note": "duck/ and tests/e2e/fixtures/grad-project are verbatim copies of these Ducktor paths at this commit. Re-run scripts/sync-duck.mjs instead of editing them.",
   "source": {
     "repository": "HKUSTDial/Ducktor",
-    "ref": "06d674edf0eed5f3003f7f53a5e77be59cf869c3",
-    "commit": "06d674edf0eed5f3003f7f53a5e77be59cf869c3",
-    "committedAt": "2026-11-20T05:04:55-08:00",
-    "subject": "testing.md: the user counted both readings as passes by the criteria text (11-20)"
+    "ref": "439fc7171a2b230929a5f802e19c49feeccc88d8",
+    "commit": "439fc7171a2b230929a5f802e19c49feeccc88d8",
+    "committedAt": "2026-11-20T05:17:51-08:00",
+    "subject": "Docs and the e2e check after red team round 3: the third reading that also decides the dsh holdout pass, no 'literal' for two opposite readings, the dsh loop history, the full-text claim and the changed publisher, backup and sample-size details, digits in the run words"
   },
   "paths": [
     "bin",
