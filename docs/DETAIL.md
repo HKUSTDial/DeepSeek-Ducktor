@@ -29,7 +29,7 @@ Besides Ducktor's 23 experience cards, the plugin ships 10 of its own (`mentor/c
 
 All three are optional.
 
-- `duckRoot`: absolute path of your own Ducktor checkout, used instead of the copy in this plugin.
+- `duckRoot`: absolute path of your own Ducktor checkout, used instead of the copy in this plugin. The check before edits needs Ducktor 0.2.4 or newer.
 - `sessionContext`: on by default. Off leaves only the commands; sessions no longer get the opening context and resident rules.
 - `subagents`: off by default. On gives subagent sessions the opening context too; they cannot stop to ask you, which is why the default leaves them out.
 
@@ -43,4 +43,4 @@ All three are optional.
 
 ## License
 
-Plugin code (including the tab): MIT; plugin documentation and the extra cards (`mentor/`): CC BY-NC-SA 4.0. Ducktor in `duck/` is licensed by directory: its text (skills/, rules/, cards/, handbook/) is CC BY-NC-SA 4.0 (non-commercial), each original skill in `library/` keeps its own license, and its code is MIT. Ducktor is adapted from Supervisor-Skills by Yuyu Luo and contributors (CC BY-NC-SA 4.0).
+Plugin code (including the tab): MIT; plugin documentation and the extra cards (`mentor/`): CC BY-NC-SA 4.0. Ducktor in `duck/` is licensed by directory: its text (skills/, rules/, cards/, handbook/) is CC BY-NC-SA 4.0 (non-commercial), the original skills in `library/` keep the CC BY-NC-SA 4.0 license of Supervisor-Skills, and its code is MIT. Ducktor is adapted from Supervisor-Skills by Yuyu Luo and contributors (CC BY-NC-SA 4.0).

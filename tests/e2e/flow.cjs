@@ -208,6 +208,21 @@ const exists = (rel) => fs.existsSync(duckFile(rel));
 const text = (rel) => (exists(rel) ? fs.readFileSync(duckFile(rel), 'utf8') : '');
 const reports = (suffix) => (fs.existsSync(duckFile('reports'))
   ? fs.readdirSync(duckFile('reports')).filter((f) => f.endsWith(`${suffix}.md`) || f.includes(`${suffix}-`)) : []);
+// The fixture's 0.8-point gain (71.2 against 70.4) comes from one run: notes.md says so, the paper
+// says nothing about runs. A review catches it when one line of the reply or of the review report
+// (a bullet or a table row) ties that result to the number of runs or their spread. Until 0.2.4
+// the check read the reply only, for the words seed, 种子, 单次, 一次, 方差, 标准差 (dsh main, 11-09:
+// the reply said the paper does not state 跑几次, the report said 71.2 对 70.4 只跑一次, and the
+// check failed). A line about runs that does not name the result, such as a generic checklist
+// row, does not count. A bare 一次 is too wide (red team round 2: 再看一次 next to 去噪 would
+// count), so only phrases about having run once do (只跑过一次, 跑了 1 次), not 再跑一次 or advice
+// such as 就跑一次. Re-judged on every main run saved under evals/results/ of the Ducktor and
+// DeepSeek-Ducktor checkouts and worktrees (11-20), two verdicts changed: that dsh run now passes,
+// and the Codex main run of 10-18 05:08 (e2e-codex-2026-10-18T05-08-13), which passed on 只计一次
+// in an unrelated line, now fails.
+const RUN_WORDS = /seed|种子|单次|(?:只|仅)跑[了过]?\s*[1一]\s*次|跑[了过]\s*[1一]\s*次|一次运行|一次结果|几次|重复次数|方差|标准差/i;
+const THE_RESULT = /0\.8|71\.2|70\.4|removes noise|去噪/i;
+const tiesRunsToResult = (body) => String(body || '').split('\n').some((s) => RUN_WORDS.test(s) && THE_RESULT.test(s));
 const allReports = () => (fs.existsSync(duckFile('reports')) ? fs.readdirSync(duckFile('reports')) : []);
 // Read the original skill in this stage, or earlier in the same dsh session (its text is still in context).
 const readOf = (t, skill) => [...t.reads, ...(t.earlierReads || [])].some((r) => r && (r.includes(`library/${skill}/SKILL.md`)
@@ -504,7 +519,7 @@ function mainStages() {
     { name: 'review', resume: true, prompt: `${cmd('duck-review')} paper/main.tex`, checks: [
       ['must', 'read library/pre-submission-reviewer', (t) => readOf(t, 'pre-submission-reviewer')],
       ['must', 'wrote a review report', () => reports('review').length > 0],
-      ['must', 'caught the single-run claim', (t) => /seed|种子|单次|一次|方差|标准差/.test(t.reply)],
+      ['must', 'caught the single-run claim', (t) => tiesRunsToResult(t.reply) || reports('review').some((f) => tiesRunsToResult(text(`reports/${f}`)))],
       ['should', 'caught the em-dash', (t) => /em-dash|破折号|em dash/i.test(t.reply)],
       ...shortWhyChecks(),
     ] },

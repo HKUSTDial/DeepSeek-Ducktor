@@ -26,7 +26,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/works%20with-DeepSeek%20Harness-007ec6?style=flat-square" alt="Works with DeepSeek Harness">
-  <a href="#许可证-license"><img src="https://img.shields.io/badge/license-MIT%20%C2%B7%20CC%20BY--NC--SA%204.0%20%C2%B7%20CC%20BY%204.0-lightgrey?style=flat-square" alt="License: MIT, CC BY-NC-SA 4.0 and CC BY 4.0"></a>
+  <a href="#许可证-license"><img src="https://img.shields.io/badge/license-MIT%20%C2%B7%20CC%20BY--NC--SA%204.0-lightgrey?style=flat-square" alt="License: MIT and CC BY-NC-SA 4.0"></a>
 </p>
 
 <p align="center">
@@ -213,7 +213,7 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 
 | 字段 | 默认 | 说明 |
 |---|---|---|
-| `duckRoot` | 插件自带的 `duck/` | 用你自己的 Ducktor 目录，必须是绝对路径 |
+| `duckRoot` | 插件自带的 `duck/` | 用你自己的 Ducktor 目录，必须是绝对路径。改稿前的检查要 Ducktor 0.2.4 或更新；更早的版本照常有命令和开场说明，改稿不检查 |
 | `sessionContext` | `true` | 关掉以后只剩命令，会话不再带开场说明和常驻规则 |
 | `subagents` | `false` | 子代理会话也带开场说明。默认不带，因为子代理没法停下来问学生 |
 
@@ -252,6 +252,7 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 | 读插件里的文件 | Claude Code 里插件给 Read、Glob、Grep 开了绿灯 | dsh 的每种沙箱模式都不拦读文件，不用学生批准；插件目录只读 |
 | 学生自己加的命令 | 放项目的 `.claude/skills/duck-xxx/` 或 `.agents/skills/duck-xxx/` | dsh 只读 `.agents/skills/`（和 `.dsh/skills/`），不读 `.claude/skills/`。名字别和插件的 14 条重复：dsh 里插件自带的技能优先级最低，同名的会盖过插件的命令 |
 | 项目目录 | 开场 hook 收到的目录 | 会话创建时的目录。开场说明里写明它和 `.duck/` 的绝对路径，让模型在会话里换了工作目录也读写原来的 `.duck/`（模型照不照做，没用真模型验证） |
+| 改稿前的检查（0.2.4 起） | 开启后，每一轮第一次改文本稿时，`bin/duck.js` 的 hook 拒绝一次，交给 AI 一段提醒；Claude Code 一条消息里一起发出的几处一起拒绝；Codex 里还没开 | 同一条规则、同一段提醒（`duck/rules/checkpoint.md`），由插件在 dsh 执行改稿工具前拒绝；同一步里一起发出的几处一起拒绝 |
 
 ---
 
@@ -287,6 +288,12 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 2026-10-25 的第一版叫 deepseek-ducktor。10-26 改名 deepseek-supervisor，10-27 改名 deepseek-doctor（显示名 DeepSeek-Doctor），10-29 改回 deepseek-ducktor。里面的 Ducktor 在 10-27 以前叫 Doctor Duck。<code>evals/runs/</code> 和 <code>docs/验证记录.md</code> 里的旧记录保留了当时的名字。装过旧版本的，见「安装与快速开始」里的旧版本说明。
 </details>
 
+<details>
+<summary><b>6. 为什么每一轮第一次改稿会被拦一次？</b></summary>
+<br>
+开启 Ducktor 后（on 或 quiet），每一轮 AI 第一次改文本稿（.md、.tex、.txt 这类）时，插件先拒绝这次修改，交给 AI 一段固定提醒：查一查这次修改有没有替你定下还没定的研究决定，稿子里互相矛盾的地方有没有替你选边。AI 读完提醒再重新改。检查只保证 AI 改稿前读到这段提醒，不保证照做。测试里，AI 有时仍把只适用于其中一种选择的写法写进稿子。这一版以前的候选在 DeepSeek-Ducktor 上测出过另一个问题：AI 读完提醒常把这次拦截当成「改得不对」，比如把你说「你定吧」交给它的事改回待定、再问你。这一版的提醒写明了拦下不代表改得不对、「你定吧」算定了，「你定吧」的测试改后都过了；只改文字的活会不会停下来问、重发时会不会改掉你认可过的写法，都没有重测。数字和例子见 Ducktor 的 CHANGELOG 0.2.4「已知问题」。同一步里一起发出的几处修改一起拒绝一次。改代码、改 <code>.duck/</code> 里的记录、子代理的修改不拦；关着（off）时不拦。被拦下的是整份重写时，要多花差不多重写一遍的时间。命令行的 <code>--json</code> 输出里，这次拒绝是一个状态为 error 的工具结果，内容就是这段提醒；网页界面里怎么显示，没有截图核对过。AI 改用 shell 命令写稿子时，这道检查拦不住。
+</details>
+
 ---
 
 ## 来源与致谢
@@ -302,7 +309,7 @@ id 从 deepseek-doctor 或 deepseek-supervisor 换过来以后，插件页「配
 本项目采用分目录多重许可策略：
 * **插件代码和配置**（`index.js`、`lib/`、`client/`、`scripts/`、`tests/`、`cordis.patch.yml`）：**MIT**。
 * **文档、展示文字和图**（`README.md`、`docs/`、`locale/`、`assets/`、`icon.png`）、运行记录（`evals/`）和另带的经验卡片（`mentor/`）：**CC BY-NC-SA 4.0**，和 Ducktor 的文字一样（里面有改写自 Ducktor 的段落）。
-* **`duck/`**：Ducktor 原样拷贝，按它自己的 `duck/LICENSE` 分目录许可：文字（skills/、rules/、cards/、handbook/）是 CC BY-NC-SA 4.0，不可商用；`library/` 里的原技能各自保留原来的许可（CC BY 4.0 或 CC BY-NC-SA 4.0）；代码是 MIT。
+* **`duck/`**：Ducktor 原样拷贝，按它自己的 `duck/LICENSE` 分目录许可：文字（skills/、rules/、cards/、handbook/）是 CC BY-NC-SA 4.0，不可商用；`library/` 里的原技能沿用 Supervisor-Skills 的 CC BY-NC-SA 4.0；代码是 MIT。
 * 截图里的 DeepSeek Harness 界面归其所有者，不在本许可内。
 
 完整许可条款请参阅 [LICENSE](LICENSE)。

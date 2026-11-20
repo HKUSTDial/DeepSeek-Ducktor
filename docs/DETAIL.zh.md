@@ -63,7 +63,7 @@ DeepSeek-Ducktor 是社区做的插件，不是 DeepSeek 官方出品，和 Deep
 
 插件的设置页有三项，都可以不填：
 
-- `duckRoot`：用你自己的 Ducktor 目录（绝对路径），不用插件自带的那份。
+- `duckRoot`：用你自己的 Ducktor 目录（绝对路径），不用插件自带的那份。改稿前的检查要 Ducktor 0.2.4 或更新。
 - `sessionContext`：默认开。关掉以后只剩命令，会话不再带开场说明和常驻规则。
 - `subagents`：默认关。打开后子代理会话也带开场说明；默认不带，因为子代理没法停下来问你。
 
@@ -77,4 +77,4 @@ DeepSeek-Ducktor 是社区做的插件，不是 DeepSeek 官方出品，和 Deep
 
 ## 许可
 
-插件代码（含页签）是 MIT，插件的文档和另带的经验卡片（`mentor/`）是 CC BY-NC-SA 4.0。`duck/` 里的 Ducktor 按目录分：文字（skills/、rules/、cards/、handbook/）是 CC BY-NC-SA 4.0，不可商用；`library/` 里的原技能各自保留原来的许可；代码是 MIT。Ducktor 改编自 Supervisor-Skills（骆昱宇及贡献者，CC BY-NC-SA 4.0）。
+插件代码（含页签）是 MIT，插件的文档和另带的经验卡片（`mentor/`）是 CC BY-NC-SA 4.0。`duck/` 里的 Ducktor 按目录分：文字（skills/、rules/、cards/、handbook/）是 CC BY-NC-SA 4.0，不可商用；`library/` 里的原技能沿用 Supervisor-Skills 的 CC BY-NC-SA 4.0；代码是 MIT。Ducktor 改编自 Supervisor-Skills（骆昱宇及贡献者，CC BY-NC-SA 4.0）。

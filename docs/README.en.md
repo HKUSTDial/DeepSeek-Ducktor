@@ -26,7 +26,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/works%20with-DeepSeek%20Harness-007ec6?style=flat-square" alt="Works with DeepSeek Harness">
-  <a href="#license"><img src="https://img.shields.io/badge/license-MIT%20%C2%B7%20CC%20BY--NC--SA%204.0%20%C2%B7%20CC%20BY%204.0-lightgrey?style=flat-square" alt="License: MIT, CC BY-NC-SA 4.0 and CC BY 4.0"></a>
+  <a href="#license"><img src="https://img.shields.io/badge/license-MIT%20%C2%B7%20CC%20BY--NC--SA%204.0-lightgrey?style=flat-square" alt="License: MIT and CC BY-NC-SA 4.0"></a>
 </p>
 
 <p align="center">
@@ -214,7 +214,7 @@ All three are optional. If you installed with way 1 or 2, change them in "配置
 
 | Field | Default | Meaning |
 |---|---|---|
-| `duckRoot` | the `duck/` that comes with the plugin | use your own Ducktor folder; must be an absolute path |
+| `duckRoot` | the `duck/` that comes with the plugin | use your own Ducktor folder; must be an absolute path. The check before edits needs Ducktor 0.2.4 or newer; with an older one the commands and the opening context work, and edits are not checked |
 | `sessionContext` | `true` | when off, only the commands stay; sessions no longer get the session note and the always-on rules |
 | `subagents` | `false` | subagent sessions also get the session note. Off by default, because a subagent cannot stop and ask the student |
 
@@ -253,6 +253,7 @@ All three are optional. If you installed with way 1 or 2, change them in "配置
 | Reading files in the plugin | in Claude Code, the plugin lets Read, Glob and Grep through | no dsh sandbox mode blocks reading files, so the student does not have to approve; the plugin folder is read-only |
 | Commands the student adds | in the project's `.claude/skills/duck-xxx/` or `.agents/skills/duck-xxx/` | dsh reads only `.agents/skills/` (and `.dsh/skills/`), not `.claude/skills/`. Do not reuse the names of the plugin's 14 commands: in dsh, skills that come with a plugin have the lowest priority, so a skill with the same name overrides the plugin's command |
 | Project folder | the folder that the session hook gets | the folder where the session was created. The session note gives the absolute paths of it and of `.duck/`, so that the model keeps reading and writing the original `.duck/` even if it changes the working folder in the session (whether the model does so was not tested with a real model) |
+| Check before a draft edit (from 0.2.4) | with Ducktor on, the hook in `bin/duck.js` refuses the first text-draft edit of each turn once and gives the AI a reminder; in Claude Code, the edits sent together in one message are refused together; not on in Codex yet | the same rule and the same reminder (`duck/rules/checkpoint.md`); the plugin refuses the edit before dsh runs the edit tool; the edits sent together in one step are refused together |
 
 ---
 
@@ -288,6 +289,12 @@ No. Ducktor gives no tests and does not grade the user. <code>/duck-idea</code> 
 The first version on 2026-10-25 was called deepseek-ducktor. On 10-26 it was renamed deepseek-supervisor, on 10-27 deepseek-doctor (display name DeepSeek-Doctor), and on 10-29 back to deepseek-ducktor. The Ducktor inside was called Doctor Duck before 10-27. The old records in <code>evals/runs/</code> and <code>docs/验证记录.md</code> keep the names of their time. If you installed an older version, see the note on older versions in "Install and quick start".
 </details>
 
+<details>
+<summary><b>6. Why is the first draft edit of each turn stopped once?</b></summary>
+<br>
+With Ducktor on (on or quiet), the first time in each turn that the AI edits a text draft (.md, .tex, .txt and the like), the plugin refuses that edit and gives the AI a fixed reminder: check whether the edit makes a research decision you have not made yet, or takes a side where your draft contradicts itself. After reading it, the AI edits again. The check makes sure that the AI reads the reminder before it edits; it does not make sure that the AI follows it. In the tests, the AI sometimes still wrote a method into the draft that fits only one of the open choices. Earlier candidates of this version showed another problem on DeepSeek-Ducktor: the AI often took the refusal to mean that the edit was wrong, for example a choice you had left to it with "you decide" went back to undecided and you were asked again. The reminder of this version says that a refusal does not mean the edit was wrong and that "you decide" counts as decided; the "you decide" tests passed after that change. Whether it still stops to ask about wording-only edits, or changes wording you had approved when it sends the edit again, was not tested again. The numbers and examples are in the known issues of 0.2.4 in Ducktor's CHANGELOG (in Chinese). Edits sent together in one step are refused together, once. Code, the records in <code>.duck/</code> and the edits of sub-agents are not stopped, and nothing is stopped when Ducktor is off. If the refused edit rewrote a whole file, the AI writes it again, which takes about as long as the first time. In the <code>--json</code> output of the command line, the refusal is a tool result with the status error, and its content is the reminder; how the web UI shows it was not checked with a screenshot. When the AI writes a draft with a shell command, this check does not stop it.
+</details>
+
 ---
 
 ## Sources and thanks
@@ -303,7 +310,7 @@ The first version on 2026-10-25 was called deepseek-ducktor. On 10-26 it was ren
 This project uses different licenses for different folders:
 * **Plugin code and configuration** (`index.js`, `lib/`, `client/`, `scripts/`, `tests/`, `cordis.patch.yml`): **MIT**.
 * **Documents, display text and images** (`README.md`, `docs/`, `locale/`, `assets/`, `icon.png`), run records (`evals/`) and the extra experience cards (`mentor/`): **CC BY-NC-SA 4.0**, the same as Ducktor's text (it contains passages adapted from Ducktor).
-* **`duck/`**: an unchanged copy of Ducktor, licensed by folder under its own `duck/LICENSE`: the text (skills/, rules/, cards/, handbook/) is CC BY-NC-SA 4.0, non-commercial; the original skills in `library/` keep their own licenses (CC BY 4.0 or CC BY-NC-SA 4.0); the code is MIT.
+* **`duck/`**: an unchanged copy of Ducktor, licensed by folder under its own `duck/LICENSE`: the text (skills/, rules/, cards/, handbook/) is CC BY-NC-SA 4.0, non-commercial; the original skills in `library/` keep the CC BY-NC-SA 4.0 license of Supervisor-Skills; the code is MIT.
 * The DeepSeek Harness interface in the screenshot belongs to its owner and is not covered by this license.
 
 For the full terms, see [LICENSE](../LICENSE).
